@@ -1,4 +1,5 @@
 #!/bin/bash
+docker network create -d bridge wordpressonly
 docker \
   run \
   --detach \
