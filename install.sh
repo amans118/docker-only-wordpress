@@ -12,9 +12,6 @@ docker \
   --network wordpressonly \
   mysql:5.7
 
-# downloading Dockerfile from github
-# wget https://raw.githubusercontent.com/amans118/docker-only-wordpress/master/Dockerfile
-
 # building image
 docker build -t dockeronlywp:v1 --no-cache .
 
