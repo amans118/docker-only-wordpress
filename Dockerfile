@@ -19,4 +19,4 @@ RUN sed -i 's/localhost/mysql:3306/' /var/www/wordpress/wp-config.php
 RUN cd /etc/apache2/sites-enabled/
 RUN sed -i 's/\/var\/www\/html/\/var\/www\/wordpress/' /etc/apache2/sites-enabled/000-default.conf
 
-CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisord.conf" ]
+CMD ["/usr/bin/supervisord"]
