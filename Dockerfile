@@ -4,8 +4,9 @@ EXPOSE 80
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y apache2 php libapache2-mod-php php-mysql wget supervisor
-COPY supervisord.conf /etc/supervisord.conf
-COPY php-fpm.conf apache2.conf /etc/supervisord/conf.d/
+ADD https://raw.githubusercontent.com/amans118/docker-only-wordpress/master/supervisord.conf /etc/supervisord.conf
+ADD https://raw.githubusercontent.com/amans118/docker-only-wordpress/master/php-fpm.conf /etc/supervisord/conf.d/php-fpm.conf
+ADD https://raw.githubusercontent.com/amans118/docker-only-wordpress/master/apache2.conf /etc/supervisord/conf.d/apache2.conf
 
 RUN cd /var/www
 RUN wget http://wordpress.org/latest.tar.gz
